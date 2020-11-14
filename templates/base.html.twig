@@ -1,0 +1,83 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<title>
+			{% block title %}
+				{{ app_name }}
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<!-- Custom fonts for this template -->
+			<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+			<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+
+			<link href="css/sb-admin-2.min.css" rel="stylesheet"/>
+		{% endblock %}
+		<!--fav icon-->
+		<link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAkn/8AKJ//ACuf/wAsn/8AT637AC2f/wC71uwAMZ35AHmevACUk5IA//XtABeP9ACOl54A//jtAL+8ugA0ov8AGJX9ADyj+QD///kAHpj9ADmO1gDFx8kAQav/ALC3vgB3t+wADI77AE2t/AD99OsAMaH9AFus8AA0oPoANaD6AEab4gAXlf4AkLzgADaP2gAulOkA4tjPACWb/gAunPgAR5LRAJrF6QA0n/gAlrDGADKh/gAWlPwAGZP5ADmk/gBpsOsAHpf8AMfDvwBRoeMAttDmALLS7AAMjPcALZz5ACqe/wArnv8AK6H/AP7z6gD79fAAa4acAI+UmAAzn/kAWazyADCh/wA0n/kA5uTiADKh/wD/+PAA//7wADmi+QA7ovkANaf/AF6w9QBChLsA///8AGCWwwDZ1tQAxMTDAEGl+QCXn6cAJJn6AOHY0QBbot4AK5v3AOfb0QArnPoAr7zHAGKk2wB6mrQA+vTuAPj29ABdqOcAEo/4AJaVkwBZk8QA6ersAFq2/wD///0AXZfHAIu+6QA2jNQA3tjSAEml8QDh188AZ5jBAPnt4wAnnf4AjqvDADGf+wCpp6UAd4SPAP/37wDf6PAApcnmABWX/wDa080AHJX5AFN+ogD///4AQqP1AI/B6gDp2MoAlaa1ACed/wB5mrYAEY73ADSc8wC4u70AMZ75ADKe+QDp4NkAncfqAEuU0gBDmeEA1s7IADCGzQD/9/AAGJD0AFSUyQBgrOwAOKH5AH2+9ACfzfMA///2AD2k+QBAo/YAPaX8AP///wDg1csAPqn/AD6s/wD37OIACYv4AJnB4gAnnP0AoaOkAC+d9wDl4d0AGI/yAKnF3AAyhcsA8OHUADeh+gA4ofoAY5C1AP//9wDq7vIAhqbAACKX+ACOwOkAIJn+AEKo/QC8r6QAbpi7AGqbxAAmnP4A+PLsAPb08gAMj/wALZ/+ABSR+QCDuOQAd6HEABWR+QD/+e8ANqH7AGWPswAZlPkAFZb/ANbT0AD//vUAGpT5AMKjigAblPkA9eXYAHumygA9pPsAYZjFAMnEvwD46t4AH5z/APXs5AAgnP8A8+7qAJm/3gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlZWVlWuBuMdNr52WY5WVlZWVTE8jdLEAAzjMiQnNlZWVY1hebIccDA+lpEQTcM2VlU5/Nzo+QBePHWhuuzFfeMAgUkF5oaife6NGqx5EoiVDGbVLwrJcWTNgdQ2CR8pvc72DL4BRugRiGlPERxE4fmV2PxEWvDuQzmd4GMaSBWp6wwdIrYZps20IMgqTSDmwNbmejlCUrnKXmCuRXR8mqVuaVUIRSXynSpvJDioeIchjjcEnLIy/PJlWIlcfnCgblYoLqgJ3ZFq3psW1V6CIlZWVYYsufQFmPSQUrKAVlZWVlZVFMDa2EL4ttFSElZWVlZWVlXhxBoUpNMsSlZWVlQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon"/>
+	</head>
+	<body
+		id="page-top">
+		<!-- Page Wrapper -->
+		<div id="wrapper">
+			{% block body %}
+				{# <span id="sidebar">
+					{{ include('sidebar.html.twig') }}
+				</span> #}
+				<div
+					id="content-wrapper" class="d-flex flex-column">
+					<!-- Main Content -->
+
+					<div
+						id="content">
+
+						<!-- Begin Page Content -->
+						<div class="container-fluid">
+							{{ include('heading.html.twig') }}
+
+							{% block content %}{% endblock %}
+
+							{{ include('footer.html.twig') }}
+
+						</div>
+					</div>
+				{% endblock %}
+			</div>
+			{% block javascripts %}
+				<!-- Bootstrap core JavaScript -->
+				<script src="vendor/jquery/jquery.min.js"></script>
+				<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+				<!-- Core plugin JavaScript -->
+				<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+				<!-- Custom scripts for all pages -->
+				<script src="js/sb-admin-2.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+				<script>
+
+					$(document).ready(function () {
+var clipboard = new ClipboardJS('.clipjs');
+
+$('.clipjs').each(function () {
+$(this).tooltip({trigger: "click", title: "Copied!"});
+
+
+});
+
+$('.clipjs').on('show.bs.tooltip', function () {
+
+$('.clipjs').tooltip('hide');
+});
+
+
+});
+				</script>
+			{% endblock %}
+		</body>
+	</body>
+</html>

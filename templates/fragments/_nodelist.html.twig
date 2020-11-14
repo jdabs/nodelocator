@@ -1,0 +1,33 @@
+
+{% block nodelist %}
+  <div class="card-deck">
+    <div class="row row-cols-1 row-cols-md-3">
+      {% for node in nodes %}
+        <div class="col mb-3">
+          <div class="card shadow">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">
+                {{ node.node|e }}
+              </h6>
+            </div>
+            <div class="card-body">
+              Bitnodes rank: {{ node.rank }}
+              <div class="bd-clipboard">
+                <button type="button"
+                  class="btn-clipboard btn btn-primary clipjs"
+                  title="Copied!"
+                  data-clipboard-action="copy"
+                
+                  
+                  data-clipboard-text="{{ node.node|e }}">
+                  Copy
+                </button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
